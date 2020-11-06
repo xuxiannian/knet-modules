@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * yyyy-MM-dd HH:mm:ss
  *
- * @author zhaoyb
+ * @author xuxiannian
  */
 public class DateUtil {
 
