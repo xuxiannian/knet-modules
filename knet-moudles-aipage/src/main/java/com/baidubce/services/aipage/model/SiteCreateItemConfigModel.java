@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class SiteCreateItemConfigModel {
-    private String comboName = "site_miniprogram_2";
+    private String comboName = "site_miniprogram_1";
     private String name;
     private int count;
     private int time;

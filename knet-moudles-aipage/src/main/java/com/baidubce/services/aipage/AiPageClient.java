@@ -14,10 +14,7 @@ import com.baidubce.http.handler.HttpResponseHandler;
 import com.baidubce.internal.InternalRequest;
 import com.baidubce.internal.RestartableInputStream;
 import com.baidubce.model.AbstractBceRequest;
-import com.baidubce.services.aipage.model.AiPageCreateRequest;
-import com.baidubce.services.aipage.model.AiPageCreateResponse;
-import com.baidubce.services.aipage.model.AiPageListRequest;
-import com.baidubce.services.aipage.model.AiPageListResponse;
+import com.baidubce.services.aipage.model.*;
 import com.baidubce.util.HttpUtils;
 import com.baidubce.util.JsonUtils;
 
@@ -71,17 +68,24 @@ public class AiPageClient extends AbstractBceClient {
 
     }
 
-    public AiPageListResponse listAiPage(AiPageListRequest request) {
+    public AiPageRenewResponse renewAiPage(AiPageRenewRequest request) {
+        InternalRequest internalRequest = this.createRequest(request, HttpMethodName.POST, BASE_URL, "renew");
+        internalRequest.addParameter(CLIENT_TOKEN, this.generateClientToken());
+        attachRequestToBody(request, internalRequest);
+        return this.invokeHttpClient(internalRequest, AiPageRenewResponse.class);
+
+    }
+    public AiPageResponse listAiPage(AiPageListRequest request) {
         InternalRequest internalRequest = this.createRequest(request, HttpMethodName.GET, BASE_URL, "list");
         attachRequestToBody(request, internalRequest);
-        return this.invokeHttpClient(internalRequest, AiPageListResponse.class);
+        return this.invokeHttpClient(internalRequest, AiPageResponse.class);
 
     }
 
-    public AiPageListResponse infoAiPage(AiPageListRequest request) {
-        InternalRequest internalRequest = this.createRequest(request, HttpMethodName.GET, BASE_URL, "d0af4331-7dad-4a89-9b1a-8703202dbb7f");
+    public AiPageResponse infoAiPage(AiPageListRequest request) {
+        InternalRequest internalRequest = this.createRequest(request, HttpMethodName.GET, BASE_URL, "16778c56-9a47-43c1-b1d7-19a1acdd94a7");
         attachRequestToBody(request, internalRequest);
-        return this.invokeHttpClient(internalRequest, AiPageListResponse.class);
+        return this.invokeHttpClient(internalRequest, AiPageResponse.class);
 
     }
 

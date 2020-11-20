@@ -9,7 +9,7 @@ import java.util.Map;
 public class AbstractAipageResponse extends AbstractBceResponse {
 
     Map result;
-    boolean success;
+    Boolean success;
     String status;
     String msg;
 
