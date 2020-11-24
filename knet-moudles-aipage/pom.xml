@@ -43,13 +43,31 @@
 
     </dependencies>
 
+
     <build>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+        <repository>
+            <id>Project Releases</id>
+            <name>Project Releases</name>
+            <url>http://repo.knet.cn/content/repositories/ProjectReleases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>Project Snapshots</id>
+            <name>Project Snapshots</name>
+            <url>http://repo.knet.cn/content/repositories/ProjectSnapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
