@@ -8,12 +8,17 @@ public class AbstractAipageResponse extends AbstractBceResponse {
 
     Object result;
     Boolean success;
+    Integer status;
+    String msg;
+    Object data;
 
     @Override
     public String toString() {
         return "AbstractAipageResponse{" +
                 "result=" + result +
                 ", success=" + success +
+                ", status='" + status + '\'' +
+                ", msg=" + msg +
                 '}';
     }
 }

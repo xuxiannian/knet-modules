@@ -83,7 +83,7 @@ public class AiPageClient extends AbstractBceClient {
     }
 
     public AiPageResponse infoAiPage(AiPageListRequest request) {
-        InternalRequest internalRequest = this.createRequest(request, HttpMethodName.GET, BASE_URL, "16778c56-9a47-43c1-b1d7-19a1acdd94a7");
+        InternalRequest internalRequest = this.createRequest(request, HttpMethodName.GET, BASE_URL, "16778c56-9a47-431c1-b1d7-19a1acdd94a7");
         attachRequestToBody(request, internalRequest);
         return this.invokeHttpClient(internalRequest, AiPageResponse.class);
 

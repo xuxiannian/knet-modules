@@ -6,8 +6,8 @@ import com.baidubce.services.aipage.model.AiPageResponse;
 
 public class AipageUtils {
 
-    private static String AK = "e5d7515f4c114174baad193f017dad18";
-    private static String SK = "5df5c5ccbf664398abb0ec7d679300b9";
+    private static String AK = "e5d7515f4c114asdfawettgv17dad18";
+    private static String SK = "5df5wettweee98abb0ec7d679300b9";
 
 
     public static void main(String[] args) {
@@ -33,6 +33,6 @@ public class AipageUtils {
         //站点详细
         AiPageClient client = AiPageClient.createAiPageClient(AK, SK, "aipage.baidubce.com");
         AiPageResponse res=client.infoAiPage(new AiPageListRequest());
-        System.out.println(res);
+        System.out.println("res.getMsg():"+res.getMsg()+" res.getSuccess():"+res.getSuccess()+" res.getStatus():"+res.getStatus()+"");
     }
 }

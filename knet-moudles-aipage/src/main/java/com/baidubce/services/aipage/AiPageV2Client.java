@@ -60,11 +60,11 @@ public class AiPageV2Client extends AbstractBceClient {
     }
 
 
-    public AiPageCreateResponse createAiPage(AiPageCreateRequest request) {
+    public AiPageListResponse createAiPage(AiPageCreateRequest request) {
         InternalRequest internalRequest = this.createRequest(request, HttpMethodName.POST, BASE_URL, "new");
         internalRequest.addParameter(CLIENT_TOKEN, this.generateClientToken());
         attachRequestToBody(request, internalRequest);
-        return this.invokeHttpClient(internalRequest, AiPageCreateResponse.class);
+        return this.invokeHttpClient(internalRequest, AiPageListResponse.class);
 
     }
 
