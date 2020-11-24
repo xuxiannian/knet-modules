@@ -5,8 +5,8 @@ import lombok.ToString;
 
 @Data
 @ToString
-public class AiPageResponse extends AbstractAipageResponse {
+public class AiPageListResponse extends AbstractAipageResponse {
 
-    SiteModel result;
+    SiteListModel result;
 }
 

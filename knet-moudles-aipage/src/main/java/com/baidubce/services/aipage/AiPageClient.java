@@ -60,25 +60,25 @@ public class AiPageClient extends AbstractBceClient {
     }
 
 
-    public AiPageCreateResponse createAiPage(AiPageCreateRequest request) {
+    public AiPageListResponse createAiPage(AiPageCreateRequest request) {
         InternalRequest internalRequest = this.createRequest(request, HttpMethodName.POST, BASE_URL, "new");
         internalRequest.addParameter(CLIENT_TOKEN, this.generateClientToken());
         attachRequestToBody(request, internalRequest);
-        return this.invokeHttpClient(internalRequest, AiPageCreateResponse.class);
+        return this.invokeHttpClient(internalRequest, AiPageListResponse.class);
 
     }
 
-    public AiPageRenewResponse renewAiPage(AiPageRenewRequest request) {
+    public AiPageListResponse renewAiPage(AiPageRenewRequest request) {
         InternalRequest internalRequest = this.createRequest(request, HttpMethodName.POST, BASE_URL, "renew");
         internalRequest.addParameter(CLIENT_TOKEN, this.generateClientToken());
         attachRequestToBody(request, internalRequest);
-        return this.invokeHttpClient(internalRequest, AiPageRenewResponse.class);
+        return this.invokeHttpClient(internalRequest, AiPageListResponse.class);
 
     }
-    public AiPageResponse listAiPage(AiPageListRequest request) {
+    public AiPageListResponse listAiPage(AiPageListRequest request) {
         InternalRequest internalRequest = this.createRequest(request, HttpMethodName.GET, BASE_URL, "list");
         attachRequestToBody(request, internalRequest);
-        return this.invokeHttpClient(internalRequest, AiPageResponse.class);
+        return this.invokeHttpClient(internalRequest, AiPageListResponse.class);
 
     }
 
