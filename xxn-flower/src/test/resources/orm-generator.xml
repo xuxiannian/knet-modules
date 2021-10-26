@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry
+		location="/Users/xuxiannian/work/apache-maven-3.3.9/repo/org/xerial/sqlite-jdbc/3.21.0.1/sqlite-jdbc-3.21.0.1.jar" />
+	<context id="context1" targetRuntime="MyBatis3">
+		<plugin
+			type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin"></plugin>
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+		<!-- Pagination -->
+
+		<commentGenerator>
+			<property name="suppressDate" value="true" />
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!-- jdbc连接信息 -->
+		<jdbcConnection driverClass="org.sqlite.JDBC"
+			connectionURL="jdbc:sqlite:/Users/xuxiannian/work/sqlite/db.sqlite" />
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<!-- 生成model对象 -->
+		<javaModelGenerator targetPackage="cn.xxn.domain"
+			targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<!-- 生成用于查询的Example对象 -->
+		<sqlMapGenerator targetPackage="mybatis"
+			targetProject="src/main/resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<!-- 生成DAO的类文件以及配置文件 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="cn.xxn.repository" targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		
+		<table tableName="my_record">
+			<columnOverride column="date" javaType="java.util.Date"></columnOverride>
+		</table>
+
+	</context>
+</generatorConfiguration> 
